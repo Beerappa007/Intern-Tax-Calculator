@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Tax Calculator</h2>
+        <form id="taxForm">
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <select id="age" class="form-control" required>
+                    <option value="" disabled selected>Select Age Group</option>
+                    <option value="<40">&lt; 40</option>
+                    <option value="≥ 40 &lt; 60">≥ 40 &lt; 60</option>
+                    <option value="≥ 60">≥ 60</option>
+                </select>
+                <div class="error-icon" id="ageError" title="Age is required"></div>
+            </div>
+            <div class="form-group">
+                <label for="income" >Gross Annual Income:</label>
+                <input type="number" id="income" class="form-control" placeholder="Enter Annual Income" required>
+                <div class="error-icon" id="incomeError" title="Please enter a valid number"></div>
+            </div>
+            <div class="form-group">
+                <label for="extraIncome">Extra Income:</label>
+                <input type="number" id="extraIncome" class="form-control" placeholder="Enter Extra Income" required>
+                <div class="error-icon" id="extraIncomeError" title="Please enter a valid number"></div>
+            </div>
+            <div class="form-group">
+                <label for="deductions">Deductions:</label>
+                <input type="number" id="deductions" class="form-control" placeholder="Enter Deduction" required>
+                <div class="error-icon" id="deductionsError" title="Please enter a valid number"></div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Calculate Tax</button>
+        </form>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 class="text-center">Tax Details</h2>
+            <p id="taxDetails" class="text-center"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
